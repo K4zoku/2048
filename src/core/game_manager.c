@@ -67,18 +67,39 @@ bool gm_move(Grid * grid, Direction dir) {
 }
 
 bool gm_add_random_tile(Grid * grid) {
+  bool added = false;
   cvector_vector_type(uint16_t) available = grid_get_available_cells(grid);
+  if (cvector_size(available) == 0) {
+    goto end;
+  }
+
   uint16_t choose = available[rand() % cvector_size(available)];
-  cvector_free(available);
-  // 2 - 90% ; 4 - 10%
   uint32_t value = (rand() / (float) RAND_MAX) >= 0.9 ? 4 : 2;
   grid->cells[choose] = value;
-  return true;
+  added = true;
+
+  end:;
+  cvector_free(available);
+  return added;
 }
 
 bool gm_add_random_tiles(Grid * grid, uint16_t n_tiles) {
-  while (n_tiles--) gm_add_random_tile(grid);
-  return true;
+  bool added = true;
+  cvector_vector_type(uint16_t) available = grid_get_available_cells(grid);
+  while (n_tiles--) {
+    if (cvector_size(available) == 0) {
+      added = false;
+      goto end;
+    }
+    size_t index = rand() % cvector_size(available);
+    uint16_t choose = available[index];
+    cvector_erase(available, index);
+    uint32_t value = (rand() / (float) RAND_MAX) >= 0.9 ? 4 : 2;
+    grid->cells[choose] = value;
+  }
+  end:;
+  cvector_free(available);
+  return added;
 }
 
 bool gm_tile_matches_available(Grid * grid) {
