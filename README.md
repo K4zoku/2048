@@ -42,7 +42,8 @@ $ make
 
 _If the build is successful, the binary file will now be located in `dist/bin`_
 
+<br>
+
 ---
 
-
-> <p align="center">Made with ❤️ by <a href="https://github.com/K4zoku"><i>@K4zoku</i></a></p>
+<p align="center">Made with ❤️ by <a href="https://github.com/K4zoku"><i>@K4zoku</i></a></p>
