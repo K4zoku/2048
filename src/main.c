@@ -4,7 +4,7 @@
 
 #include "lib/ticks.h"
 #include "lib/geometry.h"
-#include "lib/fast_term.h"
+#include "lib/normalize.h"
 
 // 33 x 6
 const char * banner[2][6] = {

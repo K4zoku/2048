@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-#include "lib/fast_term.h"
+#include "lib/normalize.h"
 
 void print(const char * format, ...) {
   va_list list;

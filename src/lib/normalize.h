@@ -1,6 +1,6 @@
 #pragma once
-#ifndef H_FAST_TERM_INCLUDED
-#define H_FAST_TERM_INCLUDED 
+#ifndef H_NORMALIZE_INCLUDED
+#define H_NORMALIZE_INCLUDED 
 
 #include <stdint.h>
 

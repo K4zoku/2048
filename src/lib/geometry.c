@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-#include "lib/fast_term.h"
+#include "lib/normalize.h"
 #include "lib/geometry.h"
 #include "lib/string_ext.h"
 
