@@ -14,7 +14,7 @@
 
 <details>
   <summary>Screenshots</summary>
-  *quite empty huh?
+  <i>*insert screenshots here</i>
 </details>
 
 ## 🏗️ Build
@@ -45,4 +45,4 @@ _If the build is successful, the binary file will now be located in `dist/bin`_
 ---
 
 
-> <h1 align="center">Made with ❤️ by <a href="https://github.com/K4zoku"><i>@K4zoku</i></a></h1>
+> <p align="center">Made with ❤️ by <a href="https://github.com/K4zoku"><i>@K4zoku</i></a></p>
