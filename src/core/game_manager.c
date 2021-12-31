@@ -103,7 +103,20 @@ bool gm_add_random_tiles(Grid * grid, uint16_t n_tiles) {
 }
 
 bool gm_tile_matches_available(Grid * grid) {
-  (void) grid;
-  // TODO
-  return true;
+  IndexFN getIndex;
+  for (Direction dir = 0; dir < 4; ++dir) {
+    getIndex = indexfn[dir];
+    for (uint16_t y = 0; y < grid->size; ++y) {
+      for (uint16_t x = 1; x < grid->size; ++x) {
+        uint16_t index = getIndex(grid, x, y);
+        if (grid->cells[index]) {
+          uint16_t other = getIndex(grid, x - 1, y);
+          if (grid->cells[index] == grid->cells[other]) {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  return false;
 }
