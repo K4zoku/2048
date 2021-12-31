@@ -69,7 +69,7 @@ bool gm_move(Grid * grid, Direction dir) {
 bool gm_add_random_tile(Grid * grid) {
   cvector_vector_type(uint16_t) available = grid_get_available_cells(grid);
   uint16_t choose = available[rand() % cvector_size(available)];
-  free(available);
+  cvector_free(available);
   // 2 - 90% ; 4 - 10%
   uint32_t value = (rand() / (float) RAND_MAX) >= 0.9 ? 4 : 2;
   grid->cells[choose] = value;
