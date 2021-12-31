@@ -10,6 +10,13 @@
 
 > TODO: Write about here
 
+## 🖼️ Screenshots
+
+<details>
+  <summary>Screenshots</summary>
+  *quite empty huh?
+</details>
+
 ## 🏗️ Build
 
 ### 🧱 Dependency

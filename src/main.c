@@ -40,7 +40,7 @@ int main(int argc, const char ** argv) {
   cursoroff();
   refresh();
 
-  double fps_cap = 50.0F; // FPS
+  double fps_cap = 60.0F; // FPS 
   uint32_t interval = floor(1000.0F / fps_cap); // ms
 
   int64_t key = 0;
