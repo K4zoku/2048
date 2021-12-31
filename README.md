@@ -1,0 +1,2 @@
+# 2048
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/06bc182ebb7c444e904f9b88d4774553)](https://app.codacy.com/gh/K4zoku/2048?utm_source=github.com&utm_medium=referral&utm_content=K4zoku/2048&utm_campaign=Badge_Grade_Settings)
