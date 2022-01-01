@@ -30,14 +30,14 @@
 **Step 1:** Clone this repo
 
 ```sh
-$ git clone https://github.com/K4zoku/2048.git
-$ cd 2048
+git clone https://github.com/K4zoku/2048.git
+cd 2048
 ```
 
 **Step 2:** Make
 
 ```sh
-$ make
+make
 ```
 
 _If the build is successful, the binary file will now be located in `dist/bin`_
