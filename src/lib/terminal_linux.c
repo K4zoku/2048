@@ -68,13 +68,10 @@ bool term_kbhit() {
 }
 
 int term_getch() {
-  int r;
   char c;
-  if ((r = read(0, &c, sizeof(c))) < 0) {
-    return r;
-  } else {
-    return c;
-  }
+  int r;
+  r = read(0, &c, sizeof(char));
+  return r < 0 ? r : c;
 }
 
 void term_move(uint16_t x, uint16_t y) {

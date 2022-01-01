@@ -8,10 +8,10 @@
 #include "core/grid.h"
 
 typedef enum {
-    DIR_UP, 
-    DIR_RIGHT, 
-    DIR_DOWN, 
-    DIR_LEFT
+  DIR_LEFT,
+  DIR_UP,
+  DIR_RIGHT,
+  DIR_DOWN
 } Direction;
 
 bool gm_move(Grid * grid, Direction dir);

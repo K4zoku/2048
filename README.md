@@ -21,9 +21,9 @@
 
 ### 🧱 Dependency
 
-* git (to clone this repo)
-* gcc
-* make
+  * git (to clone this repo)
+  * gcc
+  * make
 
 ### ❓ How to build
 

@@ -43,7 +43,7 @@ int main(int argc, const char ** argv) {
   double fps_cap = 60.0F; // FPS 
   uint32_t interval = floor(1000.0F / fps_cap); // ms
 
-  int64_t key = 0;
+  int64_t key;
   uint32_t last_updated, now;
   bool update = false;
 

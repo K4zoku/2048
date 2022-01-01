@@ -4,12 +4,12 @@ static inline uint16_t getIndexLeft(Grid * grid, uint8_t x, uint8_t y) {
   return x + y * grid->size;
 }
 
-static inline uint16_t getIndexRight(Grid * grid, uint8_t x, uint8_t y) {
-  return grid->length - (x + y * grid->size);
-}
-
 static inline uint16_t getIndexUp(Grid * grid, uint8_t x, uint8_t y) {
   return y + x * grid->size;
+}
+
+static inline uint16_t getIndexRight(Grid * grid, uint8_t x, uint8_t y) {
+  return grid->length - (x + y * grid->size);
 }
 
 static inline uint16_t getIndexDown(Grid * grid, uint8_t x, uint8_t y) {
@@ -19,29 +19,29 @@ static inline uint16_t getIndexDown(Grid * grid, uint8_t x, uint8_t y) {
 typedef uint16_t (*IndexFN)(Grid *, uint8_t, uint8_t);
 
 static const IndexFN indexfn[4] = {
+  getIndexLeft,
   getIndexUp,
   getIndexRight,
-  getIndexDown,
-  getIndexLeft
+  getIndexDown
 };
 
 bool gm_move(Grid * grid, Direction dir) {
-  bool moved, merged;
-  uint8_t x, y, i;
-  uint16_t previous, index, next;
+  bool merged, moved;
+  uint8_t x, y, xx;
+  uint16_t index;
   IndexFN getIndex; 
 
-  moved = merged = false;
+  merged = moved = false;
   getIndex = indexfn[dir];
   for (y = 0; y < grid->size; ++y) {
-    previous = getIndex(grid, 0, y);
+    uint16_t previous = getIndex(grid, 0, y);
     for (x = 1; x < grid->size; ++x) {
       index = getIndex(grid, x, y);
       if (grid->cells[index]) {
         if (grid->cells[index] == grid->cells[previous]) {
-          merged = true;
           grid->cells[previous] <<= 1;
           grid->cells[index] = 0;
+          merged = true;
         }
         previous = index;
       }
@@ -50,12 +50,12 @@ bool gm_move(Grid * grid, Direction dir) {
     for (x = 0; x < grid->size; ++x) {
       index = getIndex(grid, x, y);
       if (grid->cells[index] == 0) {
-        for (i = x + 1; i < grid->size; ++i) {
-          next = getIndex(grid, i, y);
+        for (xx = x + 1; xx < grid->size; ++xx) {
+          uint16_t next = getIndex(grid, xx, y);
           if (grid->cells[next]) {
-            moved = true;
             grid->cells[index] = grid->cells[next];
             grid->cells[next] = 0;
+            moved = true;
             break;
           }
         }
