@@ -1,7 +1,7 @@
 <h1 align="center"><code>2048</code></h1>
 <p align="center">
   <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/f7c87e96ee8946b88a0beba54beb5285?style=for-the-badge">
-  <img alt="Workflow Status" src="https://img.shields.io/github/workflow/status/K4zoku/2048/Build?style=for-the-badge">
+  <img alt="Workflow Status" src="https://img.shields.io/github/actions/workflow/status/K4zoku/2048/build.yml?style=for-the-badge">
   <img alt="License" src="https://img.shields.io/github/license/K4zoku/2048?style=for-the-badge">
   <img alt="Sponsors" src="https://img.shields.io/github/sponsors/K4zoku?color=F2AE49&style=for-the-badge">
 </p>
